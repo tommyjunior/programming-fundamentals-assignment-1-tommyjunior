@@ -34,6 +34,61 @@
 # - N must be a positive integer. If the user enters 0 or a negative
 #   number, print an error message and stop.
 #
+def calculate_sum(numbers):
+    """Return the sum of all numbers in the list using a loop."""
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+
+def calculate_average(numbers):
+    """Return the average of the numbers."""
+    if len(numbers) == 0:
+        return 0
+    return calculate_sum(numbers) / len(numbers)
+
+
+def find_maximum(numbers):
+    """Return the largest number in the list using a loop."""
+    maximum = numbers[0]
+    for num in numbers:
+        if num > maximum:
+            maximum = num
+    return maximum
+
+
+def find_minimum(numbers):
+    """Return the smallest number in the list using a loop."""
+    minimum = numbers[0]
+    for num in numbers:
+        if num < minimum:
+            minimum = num
+    return minimum
+
+
+def main():
+    n = int(input("How many numbers? "))
+
+    if n <= 0:
+        print("Error: Number of values must be a positive integer.")
+        return
+
+    numbers = []
+    for i in range(1, n + 1):
+        num = float(input(f"Enter number {i}: "))
+        numbers.append(num)
+
+    print()
+    print("Results:")
+    print(f"Sum:     {calculate_sum(numbers)}")
+    print(f"Average: {calculate_average(numbers)}")
+    print(f"Maximum: {find_maximum(numbers)}")
+    print(f"Minimum: {find_minimum(numbers)}")
+
+
+if __name__ == "__main__":
+    main()
 
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
